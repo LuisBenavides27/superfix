@@ -49,7 +49,7 @@
                                 <div class="mb-4">
                                     <label for="fecha_inicio_1" class="block text-gray-700">Fecha de inicio:</label>
                                     <input required type="date" class="w-full border-gray-300 rounded-md"
-                                        name="fecha_inicial">
+                                        name="fecha_inicial" max="{{ date('Y-m-d') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label for="fecha_fin_1" class="block text-gray-700">Fecha de fin:</label>
