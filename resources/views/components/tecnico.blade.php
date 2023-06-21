@@ -15,8 +15,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($activos as $activo)
-                    {{-- @if ($activo->id == 1) --}}
+                @foreach ($activos as $activo)                    
                     <tr class="border-b dark:border-gray-700">
                         <th scope="row"
                             class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -34,8 +33,7 @@
                         @else
                             <td class="px-4 py-3"></td>
                         @endif
-                        <td class="px-4 py-3">{{ $activo->centro->name }}</td>
-
+                        <td class="px-4 py-3">{{ $activo->centro->name }}</td>                                
                         <td class="px-4 py-3">
                             @if ($activo->status == 1)
                                 <span
@@ -79,7 +77,7 @@
                             </td>
                         @endif
                     </tr>
-                    {{--  @endif --}}
+                  
                 @endforeach
 
             </tbody>

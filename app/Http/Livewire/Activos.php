@@ -11,9 +11,9 @@ class Activos extends Component
 {
     public $search;
     public $filtroEstado = '';
-
+    
     use WithPagination;
-
+   
     public function updatingSearch()
     {
         $this->resetPage();
@@ -23,7 +23,6 @@ class Activos extends Component
     {
         $this->resetPage();
     }
-
 
     public function render()
     {

@@ -5,7 +5,6 @@ use App\Http\Controllers\ObservationController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
-//App::setLocale("en");
 Route::get('/', function () { return view('welcome'); });
 
 Route::resource('elementos', ElementoController::class)->names('elementos')->middleware('auth');

@@ -51,7 +51,6 @@
                                             class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             {{ $user->id }}
                                         </th>
-                                        <td class="px-4 py-3">{{ $user->name }}</td>
                                         <td class="px-4 py-3">{{ $user->cargo }}</td>
                                         <td class="px-4 py-3">{{ $user->zone }}</td>
                                         <td class="px-4 py-3">{{ $user->email }}</td>
@@ -68,7 +67,7 @@
                                                 <p>Sin Asignar</p>
                                             @endif
                                         </td>
-                                        <td class="px-4 py-3">
+                                        <td >
                                             <div class="flex justify space-x-6">
                                                 @can('reportes.edit')
                                                     <a href="{{ route('reportes.edit', $user) }}"
