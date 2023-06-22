@@ -113,15 +113,18 @@
                                 </label>
                                 <select required id="centro_id" name="centro_id"
                                     class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline">
-                                    <option value="{{ null }}">-- seleccione origen --</option>
+                                    <option value="{{ null }}"> seleccione origen </option>
                                     @foreach ($centros as $centro)
-                                        <option value="{{ $centro->id }}">{{ $centro->name }}</option>
+                                        <option value="{{ $centro->id }}" >{{ $centro->name }}</option>
                                     @endforeach
-                                </select>
+                                </select>                                
                                 @error('centro_id')
                                     <small class="block mt-1 text-red-500">{{ $message }}</small>
                                 @enderror
-                            </div>
+                            </div> 
+                        
+                                                   
+                            
                             <div class="mb-4 md:mr-2 md:mb-0">
                                 <label class="block mb-2 text-sm font-bold text-gray-700" for="zone">
                                     Destino
@@ -139,8 +142,7 @@
                                     <small class="block mt-1 text-red-500">{{ $message }}</small>
                                 @enderror
                             </div>
-
-                        </div>
+                        </div> 
                         <div class="mb-4">
                             <label class="block mb-2 text-sm font-bold text-gray-700" for="image">
                                 Imagen de activo a enviar: (Procura tomar la foto de forma Horizontal)

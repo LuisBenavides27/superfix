@@ -13,6 +13,7 @@ class ElementoController extends Controller
     public function __construct()
     {
         $this->middleware('can:elementos.index')->only('index');
+        $this->middleware('can:elementos.create')->only('create');
         $this->middleware('can:elementos.edit')->only('edit', 'update');
         $this->middleware('can:elementos.destroy')->only('destroy');
     }

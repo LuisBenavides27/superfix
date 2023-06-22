@@ -35,7 +35,7 @@
                         @csrf
                         <p class="text-lg font-semibold">Rol:</p>
                         <select name="rol" required
-                            class="border border-gray-300 rounded-md px-2 py-2 mt-1 w-full sm:w-2/5">
+                            class="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full">
                             <option value="{{ null }}">Seleciona un rol</option>
                             @foreach ($roles as $rol)
                                 <option value="{{ $rol->id }}" class="py-1">{{ $rol->name }}</option>
@@ -47,6 +47,7 @@
                     <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
                         Asignar rol
                     </button>
+                    
                 </div>
                 </form>
             </div>

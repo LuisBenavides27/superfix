@@ -10,7 +10,7 @@ class Elemento extends Component
 
     public function render()
     {        
-        $centros = Centro::all();
+        $centros = Centro::orderBy('name')->get();
         return view('livewire.elemento',compact('centros'));
     }
 }
