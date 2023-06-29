@@ -30,28 +30,28 @@
                     <p class="text-lg font-semibold">Nombre:</p>
                     <p class="border border-gray-300 rounded-md px-3 py-2 mt-1">{{ $users->name }}</p>
                     <br>
-                <form action="{{ route('reportes.update', $users) }}" method="post">
-                    @method('put')
+                    <form action="{{ route('reportes.update', $users) }}" method="post">
+                        @method('put')
                         @csrf
-                        <p class="text-lg font-semibold">Rol:</p>
-                        <select name="rol" required
-                            class="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full">
-                            <option value="{{ null }}">Seleciona un rol</option>
+                        <div>
+                            <p class="text-lg font-semibold">Rol:</p>
                             @foreach ($roles as $rol)
-                                <option value="{{ $rol->id }}" class="py-1">{{ $rol->name }}</option>
+                                <label class="block my-2">
+                                    <input type="checkbox" name="roles[]" value="{{ $rol->id }}" >
+                                    {{ $rol->name }}
+                                </label>
                             @endforeach
-                        </select>
-                </div>
-                <br>
-                <div class="flex justify-center">
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                        Asignar rol
-                    </button>
+                        </div>
+                        <br>
+                        <div class="flex justify-center">
+                            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                                Asignar rol
+                            </button>
+                        </div>
+                    </form>
                     
                 </div>
-                </form>
             </div>
         </div>
-    </div>
 
 </x-app-layout>

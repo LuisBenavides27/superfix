@@ -172,7 +172,9 @@ class ObservationController extends Controller
     public function update(Request $request, $users)
     {
         $users = User::find($users);
-        $users->roles()->sync($request->rol);
+
+      //  return $request;
+        $users->roles()->sync($request->roles);
 
         return redirect()->route('reportes.users')->with('info', 'Se realiza asignacion de nuevo Rol al usuario ' . $users->name);
     }
