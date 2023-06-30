@@ -105,7 +105,7 @@ class ElementoController extends Controller
         if ($observation2 && $status) {
             return redirect()->route('elementos.create')->with('info', 'Acabas de confirmar que el activo  ' . $elemento->active . ' , fue recibido y ya se encuentra en revision');
         } else {
-            return "No se pudo actualizar";
+            return redirect()->route('elementos.create')->with('danger','No se pudo actualizar el comentario de recepcion, intenta otra vez o valida si fue actualizado');
         }
     }
 
@@ -129,7 +129,6 @@ class ElementoController extends Controller
                 'url' => $url,
                 'elemento_id' => $elemento->id
             ]);
-
 
             if ($observations3 && $url && $image && $status) {
                 return redirect()->route('elementos.create')->with('info', 'Acabas de confirmar que el activo  ' . $elemento->active . ' , fue reparado');
