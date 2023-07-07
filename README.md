@@ -7,19 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+BIENVENIDOS A SUPERFIX 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Superfix es un aplicativo que se utiliza para la gestion de reparacion de activos en una empresa, permite generar solicitudes para reparacion de equipos que manejan en cualquier organizazion y que cuentan con cuerpo tecnico para reparar dichos equipos. Podran enviar solicitudes y validar el estado de sus equipos, los tecnicos informaran avances de la reparacion, se manejan diversos estados para validar los equipos, cuando sean reparados se informa que fue reparado y que procedimiento se llevo acabo, ademas los que envian solicitudes y reciben podran generar reportes PDF de los equipos reparados durante un rago de fecha seleccionado. Cuenta con funciones adicionales como tipos de roles y permisos.  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## Learning Laravel
 
