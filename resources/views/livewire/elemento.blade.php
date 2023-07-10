@@ -113,7 +113,7 @@
                                 </label>
                                 <select required id="centro_id" name="centro_id"
                                     class="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline">
-                                    <option value="{{ null }}"> seleccione origen </option>
+                                    <option value="{{ null }}">-- seleccione origen </option>
                                     @foreach ($centros as $centro)
                                         <option value="{{ $centro->id }}" >{{ $centro->name }}</option>
                                     @endforeach
@@ -121,10 +121,7 @@
                                 @error('centro_id')
                                     <small class="block mt-1 text-red-500">{{ $message }}</small>
                                 @enderror
-                            </div> 
-                        
-                                                   
-                            
+                            </div>                       
                             <div class="mb-4 md:mr-2 md:mb-0">
                                 <label class="block mb-2 text-sm font-bold text-gray-700" for="zone">
                                     Destino
@@ -136,7 +133,7 @@
                                     <option value="IPIALES">IPIALES</option>
                                     <option value="TUMACO">TUMACO</option>
                                     <option value="LA UNION">LA UNION</option>
-                                    <option value="PUTUMAYO">PUTUMAYO</option>
+                                    <option value="PUTUMAYO">PUERTO ASIS</option>
                                 </select>
                                 @error('zone')
                                     <small class="block mt-1 text-red-500">{{ $message }}</small>

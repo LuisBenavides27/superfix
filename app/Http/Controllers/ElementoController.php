@@ -72,7 +72,6 @@ class ElementoController extends Controller
 
             if ($image && $url && $observation) {
                   return redirect()->route('elementos.create')->with('info', 'Se agrego el activo ' . $activo->active . ' , recuerda revisar el estado y validar respuestas y entregas');
-               // return redirect()->route('elementos.create')->with('info','ok');
             } else {
                 return "No fue posible guardar el activo";
             }

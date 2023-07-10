@@ -237,67 +237,71 @@
         @endif
     </div>
 </div>
-<script>
-    document.getElementById('recibe').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita el envío automático del formulario
 
-        // Verifica si todos los campos requeridos están completos
-        if (this.checkValidity()) {
-            // Muestra el cuadro de confirmación
-            Swal.fire({
-                title: 'Confirmar Recepcion',
-                text: '¿Estás seguro de confirmar la recepcion del activo?',
-                icon: 'question',
-                showCancelButton: true,
-                confirmButtonText: 'Aceptar',
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Si el usuario confirmó, envía el formulario manualmente
-                    event.target.submit();
-                }
-            });
-        } else {
-            // Muestra un mensaje de error si faltan campos requeridos
-            Swal.fire({
-                title: 'Campos incompletos',
-                text: 'Por favor, completa todos los campos requeridos.',
-                icon: 'error',
-                confirmButtonText: 'OK'
-            });
-        }
-    });
-</script> 
+@if ($elemento->status == 1)
+    <script>
+        document.getElementById('recibe').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío automático del formulario
 
-<script>
-    document.getElementById('reparado').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evita el envío automático del formulario
+            // Verifica si todos los campos requeridos están completos
+            if (this.checkValidity()) {
+                // Muestra el cuadro de confirmación
+                Swal.fire({
+                    title: 'Confirmar Recepcion',
+                    text: '¿Estás seguro de confirmar la recepcion del activo?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Aceptar',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Si el usuario confirmó, envía el formulario manualmente
+                        event.target.submit();
+                    }
+                });
+            } else {
+                // Muestra un mensaje de error si faltan campos requeridos
+                Swal.fire({
+                    title: 'Campos incompletos',
+                    text: 'Por favor, completa todos los campos requeridos.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script> 
+@endif
+@if ($elemento->status == 2)
+    <script>
+        document.getElementById('reparado').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío automático del formulario
 
-        // Verifica si todos los campos requeridos están completos
-        if (this.checkValidity()) {
-            // Muestra el cuadro de confirmación
-            Swal.fire({
-                title: 'Confirmar Reparacion',
-                text: '¿Estás seguro de confirmar la reparacion del activo?',
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'Aceptar',
-                cancelButtonText: 'Cancelar'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    // Si el usuario confirmó, envía el formulario manualmente
-                    event.target.submit();
-                }
-            });
-        } else {
-            // Muestra un mensaje de error si faltan campos requeridos
-            Swal.fire({
-                title: 'Campos incompletos',
-                text: 'Por favor, completa todos los campos requeridos.',
-                icon: 'error',
-                confirmButtonText: 'OK'
-            });
-        }
-    });
-</script>
+            // Verifica si todos los campos requeridos están completos
+            if (this.checkValidity()) {
+                // Muestra el cuadro de confirmación
+                Swal.fire({
+                    title: 'Confirmar Reparacion',
+                    text: '¿Estás seguro de confirmar la reparacion del activo?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'Aceptar',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Si el usuario confirmó, envía el formulario manualmente
+                        event.target.submit();
+                    }
+                });
+            } else {
+                // Muestra un mensaje de error si faltan campos requeridos
+                Swal.fire({
+                    title: 'Campos incompletos',
+                    text: 'Por favor, completa todos los campos requeridos.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            }
+        });
+    </script>
+@endif

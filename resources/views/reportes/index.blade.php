@@ -43,7 +43,7 @@
                                 selecciona la fecha de inicio y fecha final para generar el reporte segun sea requerido.
                             </p>
                             <br>
-                            <form action="{{ route('reportes.create') }}" method="post">
+                            <form action="{{ route('reportes.create') }}" method="post" id="reporte-form">
                                 @csrf
                                 @method('get')
                                 <div class="mb-4">
@@ -58,7 +58,7 @@
                                         max="{{ date('Y-m-d') }}">
                                 </div>
                                 <div class="flex justify-center">
-                                    <button
+                                    <button id="btn-generar-reporte"
                                         class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
                                         Generar reporte
                                     </button>
@@ -70,4 +70,29 @@
             </div>
         </div>
     </div>
+
+<div id="modal-espera" class="fixed inset-0 flex items-center justify-center z-50 hidden">
+    <div class="bg-white border border-gray-300 shadow-lg rounded-lg p-6 w-86 h-86">
+        <img src="{{ asset('storage/ro.gif') }}" alt="Gif de espera" class="w-24 h-24 mx-auto mb-4">
+        <h4 class="text-center">Generando reporte...</h4>
+    </div>
+</div> 
+
 </x-app-layout>
+<script>
+    document.getElementById('btn-generar-reporte').addEventListener('click', function (event) {
+        // Evita que el formulario se envíe de forma predeterminada
+        event.preventDefault();
+
+        // Deshabilita el botón "Generar reporte"
+        this.disabled = true;
+
+        // Muestra el modal de espera
+        document.getElementById('modal-espera').classList.remove('hidden');
+
+        // Envía el formulario después de 1 segundo (puedes ajustar este tiempo según tus necesidades)
+        setTimeout(function () {
+            document.getElementById('reporte-form').submit();
+        }, 1000);
+    });
+</script>

@@ -55,7 +55,7 @@
                                         <td class="px-4 py-3">{{ $user->cargo }}</td>
                                         <td class="px-4 py-3">{{ $user->zone }}</td>
                                         <td class="px-4 py-3">{{ $user->email }}</td>
-                                        <td class="px-4 py-3">
+                                        <td class="px-4 py-3"><b>
                                             @if ($user->hasRole('Admin'))
                                                 <p>Admin</p>
                                             @elseif($user->hasRole('Tecnico'))
@@ -66,7 +66,7 @@
                                                 <p>Mesa de ayuda</p>
                                             @else
                                                 <p>Sin Asignar</p>
-                                            @endif
+                                            @endif</b>
                                         </td>
                                         <td >
                                             <div class="flex justify space-x-6">
