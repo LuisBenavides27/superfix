@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
              'zone' => 'PASTO',
          ]);
 
-         \App\Models\User::factory()->create([
+/*          \App\Models\User::factory()->create([
              'name' => 'Tecnico Pasto 1',
              'email' => 'tec@giro.com',
              'cargo' => 'Auxiliar de soporte',
@@ -119,7 +119,7 @@ class DatabaseSeeder extends Seeder
              'email' => 'lider6@giros.com',
              'cargo' => 'Lider Comercial',
              'zone' => 'TUQUERRES',
-         ]);
+         ]); */
 
          \App\Models\Centro::factory()->create([
             'code' => '1679',
