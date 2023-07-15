@@ -6,6 +6,7 @@ use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('welcome'); });
+Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard')->middleware('auth');
 
 Route::resource('elementos', ElementoController::class)->names('elementos')->middleware('auth');
 Route::resource('reportes', ObservationController::class)->except('store')->names('reportes')->middleware('auth');
@@ -18,4 +19,4 @@ Route::post('reportes.modificar/{user}', [ObservationController::class,'modifica
 Route::get('reportes.nuevo', [ObservationController::class,'nuevo'])->name('reportes.nuevo')->middleware('auth','can:reportes.nuevo');
 Route::post('reportes.agregar', [ObservationController::class,'agregar'])->name('reportes.agregar')->middleware('auth','can:reportes.agregar');
 
-Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () { Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard'); });
+//Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () { Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard'); });
